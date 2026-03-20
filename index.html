@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Conductor - Diary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface": "#f9f9fd",
+                        "surface-container-high": "#e7e8eb",
+                        "inverse-on-surface": "#f0f0f4",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-low": "#f3f3f7",
+                        "secondary-container": "#5dfd8a",
+                        "background": "#f9f9fd",
+                        "surface-bright": "#f9f9fd",
+                        "on-secondary-container": "#007232",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#edeef1",
+                        "surface-dim": "#d9dadd",
+                        "on-primary-container": "#cadcff",
+                        "secondary-fixed": "#66ff8e",
+                        "surface-tint": "#005db5",
+                        "inverse-surface": "#2e3133",
+                        "error": "#ba1a1a",
+                        "tertiary": "#674000",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary-fixed": "#002109",
+                        "primary-container": "#005fb8",
+                        "secondary": "#006d2f",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "inverse-primary": "#a8c8ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#3de273",
+                        "tertiary-container": "#875500",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary": "#00488d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#ffd4a2",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-variant": "#e2e2e6",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#005322",
+                        "outline": "#727783",
+                        "on-surface-variant": "#424752",
+                        "surface-container-highest": "#e2e2e6"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 h-screen w-64 border-r-0 bg-slate-100 dark:bg-slate-950">
+<!-- Header Section -->
+<div class="p-6 flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<img alt="Agent Avatar" class="w-10 h-10 rounded-full bg-surface-container-highest" data-alt="Agent profile avatar in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9SnZlIMHVs0oevMxJdP3xmd6SX0vhkFrbYI9lqQ7H0inm-Gt-Wr8775tjJGMsng-r48LFmloC2wvLo7uPbLmbZyXDTlo0B5kDBtwOI3RIfFGfmxio3DJX8F9HYM_3dBnuXgDVI5FckYXThLe-NlikMswLMXNbRfdDn-2pqIdC32b-JfrtEmNbYdX53eI_69T5a4PJr_WBQrTFmgtp7AlaXQoR9dCJqZbDWCyt4aQge8hkImqpskRnux9CT2JfhppyvoE5GuamO9lM"/>
+<div>
+<div class="text-sm font-bold text-on-surface">Agent 042</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Tier 2 Support</div>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col pt-4">
+<div class="px-4 mb-2 text-[11px] font-bold tracking-widest text-slate-500 uppercase">Interaction</div>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Active Call</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">WhatsApp Chat</span>
+</a>
+<a class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200 border-l-4 border-blue-700 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Diary</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Knowledge Base</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Settings</span>
+</a>
+<div class="mt-8 px-4">
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg text-[11px] font-bold tracking-widest uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        New Interaction
+                    </button>
+</div>
+</nav>
+<!-- Footer Tabs -->
+<div class="mt-auto border-t border-outline-variant/10 p-4 space-y-1">
+<a class="text-slate-600 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Help</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-2 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 flex-1 flex flex-col bg-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between px-6 w-full sticky top-0 z-50 w-full h-16 border-b-0 bg-slate-50 dark:bg-slate-900">
+<div class="flex items-center gap-8">
+<div class="text-lg font-black tracking-tighter text-blue-900 dark:text-blue-100 uppercase">Precision Conductor</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-md text-sm focus:ring-1 focus:ring-primary w-64" placeholder="Search customer or ticket..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-blue-700 dark:text-blue-400 text-sm font-sans tracking-tight">Online</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="flex gap-1">
+<button class="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-md">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-md">
+<span class="material-symbols-outlined" data-icon="person_pin">person_pin</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-md">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Area: Diary View -->
+<section class="p-8 max-w-7xl mx-auto w-full flex-1">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="text-3xl font-black text-on-surface tracking-tight mb-1 uppercase">Diary</h1>
+<p class="text-on-surface-variant text-sm font-medium tracking-wide">Friday, October 20, 2023</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-lg uppercase tracking-widest hover:bg-surface-dim transition-colors">Today</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-lg uppercase tracking-widest hover:bg-surface-dim transition-colors">Week</button>
+<div class="w-[1px] h-8 bg-outline-variant/30 mx-2"></div>
+<button class="px-4 py-2 bg-primary text-on-primary text-[11px] font-bold rounded-lg uppercase tracking-widest">Schedule New</button>
+</div>
+</div>
+<!-- High Density Diary Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Statistics Sidecar -->
+<div class="col-span-12 lg:col-span-3 space-y-4">
+<div class="p-6 bg-surface-container-low rounded-xl">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.15em] mb-4">Daily Velocity</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Callbacks</span>
+<span class="font-bold">12/15</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[80%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="font-medium">Follow-ups</span>
+<span class="font-bold">4/8</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[50%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Focus Zone -->
+<div class="p-6 bg-primary-container text-on-primary-container rounded-xl">
+<div class="text-[10px] font-bold opacity-70 uppercase tracking-[0.15em] mb-2">Next Priority</div>
+<div class="text-2xl font-black tracking-tight mb-1">09:45</div>
+<div class="text-sm font-bold mb-4">Marcus Holloway</div>
+<button class="w-full py-2 bg-white text-primary text-[11px] font-black uppercase tracking-widest rounded-full">Prepare Workspace</button>
+</div>
+</div>
+<!-- Main Diary List -->
+<div class="col-span-12 lg:col-span-9">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Time</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Type</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Customer</th>
+<th class="py-4 px-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Activity Description</th>
+<th class="py-4 px-6 text-right text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Entry 1 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group cursor-pointer">
+<td class="py-5 px-6">
+<div class="text-sm font-black text-primary">09:45 AM</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="phone_callback">phone_callback</span>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Callback</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="text-sm font-bold">Marcus Holloway</div>
+<div class="text-[10px] text-on-surface-variant">Premium Tier</div>
+</td>
+<td class="py-5 px-6">
+<p class="text-sm text-on-surface-variant line-clamp-1 max-w-xs">Discussing the upgrade to enterprise plan and cloud storage options.</p>
+</td>
+<td class="py-5 px-6 text-right">
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[9px] font-black uppercase rounded">Immediate</span>
+</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group cursor-pointer bg-surface/30">
+<td class="py-5 px-6">
+<div class="text-sm font-black text-on-surface">10:30 AM</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="mail">mail</span>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Email</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="text-sm font-bold">Elena Rodriguez</div>
+<div class="text-[10px] text-on-surface-variant">Standard</div>
+</td>
+<td class="py-5 px-6">
+<p class="text-sm text-on-surface-variant line-clamp-1 max-w-xs">Send quotation for additional license seats requested via WhatsApp.</p>
+</td>
+<td class="py-5 px-6 text-right">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant text-[9px] font-black uppercase rounded">Upcoming</span>
+</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="hover:bg-primary-fixed/5 transition-colors group cursor-pointer">
+<td class="py-5 px-6">
+<div class="text-sm font-black text-on-surface">11:15 AM</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="video_call">video_call</span>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Meeting</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="text-sm font-bold">Satoshi Nakamoto</div>
+<div class="text-[10px] text-on-surface-variant">New Lead</div>
+</td>
+<td class="py-5 px-6">
+<p class="text-sm text-on-surface-variant line-clamp-1 max-w-xs">Onboarding demo and walkthrough of the dashboard API features.</p>
+</td>
+<td class="py-5 px-6 text-right">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant text-[9px] font-black uppercase rounded">Upcoming</span>
+</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="opacity-50 grayscale">
+<td class="py-5 px-6">
+<div class="text-sm font-black">09:00 AM</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="call">call</span>
+<span class="text-[11px] font-bold uppercase">Call</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="text-sm font-bold text-on-surface">Sarah Jenkins</div>
+<div class="text-[10px]">Tier 1</div>
+</td>
+<td class="py-5 px-6">
+<p class="text-sm line-clamp-1 max-w-xs">Resolved billing discrepancy for invoice #88219.</p>
+</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[9px] font-black uppercase">Completed</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Activity Area (Fixed Action Bar) -->
+<footer class="mt-auto bg-surface-container-highest/80 backdrop-blur-xl border-t border-outline-variant/10 px-8 py-4 flex items-center justify-between sticky bottom-0">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[9px] font-black uppercase text-on-surface-variant tracking-[0.2em]">Context Selection</span>
+<span class="text-sm font-bold">Marcus Holloway (09:45)</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">View History</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="note_add">note_add</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">Add Notes</span>
+</button>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-surface-container-lowest border border-outline-variant/20 text-on-surface text-[11px] font-black uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">
+                        Reschedule
+                    </button>
+<button class="px-8 py-2.5 bg-primary text-on-primary text-[11px] font-black uppercase tracking-widest rounded-full flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg" data-icon="phone_forwarded" style="font-variation-settings: 'FILL' 1;">phone_forwarded</span>
+                        Start Call
+                    </button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
