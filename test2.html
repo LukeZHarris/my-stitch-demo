@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Conductor - Active Call</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error-container": "#ffdad6",
+                "on-error": "#ffffff",
+                "surface": "#f9f9fd",
+                "surface-container-high": "#e7e8eb",
+                "inverse-on-surface": "#f0f0f4",
+                "primary-fixed": "#d6e3ff",
+                "surface-container-low": "#f3f3f7",
+                "secondary-container": "#5dfd8a",
+                "background": "#f9f9fd",
+                "surface-bright": "#f9f9fd",
+                "on-secondary-container": "#007232",
+                "on-tertiary": "#ffffff",
+                "on-surface": "#191c1e",
+                "surface-container": "#edeef1",
+                "surface-dim": "#d9dadd",
+                "on-primary-container": "#cadcff",
+                "secondary-fixed": "#66ff8e",
+                "surface-tint": "#005db5",
+                "inverse-surface": "#2e3133",
+                "error": "#ba1a1a",
+                "tertiary": "#674000",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c2c6d4",
+                "on-secondary-fixed": "#002109",
+                "primary-container": "#005fb8",
+                "secondary": "#006d2f",
+                "on-secondary": "#ffffff",
+                "primary-fixed-dim": "#a8c8ff",
+                "on-tertiary-fixed-variant": "#653e00",
+                "inverse-primary": "#a8c8ff",
+                "on-error-container": "#93000a",
+                "secondary-fixed-dim": "#3de273",
+                "tertiary-container": "#875500",
+                "on-primary-fixed-variant": "#00468b",
+                "primary": "#00488d",
+                "tertiary-fixed-dim": "#ffb95f",
+                "on-tertiary-fixed": "#2a1700",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#ffd4a2",
+                "on-primary-fixed": "#001b3d",
+                "tertiary-fixed": "#ffddb8",
+                "surface-variant": "#e2e2e6",
+                "on-background": "#191c1e",
+                "on-secondary-fixed-variant": "#005322",
+                "outline": "#727783",
+                "on-surface-variant": "#424752",
+                "surface-container-highest": "#e2e2e6"
+              },
+              fontFamily: {
+                "headline": ["Inter", "sans-serif"],
+                "body": ["Inter", "sans-serif"],
+                "label": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- Top Navigation Shell -->
+<nav class="flex items-center justify-between px-6 w-full sticky top-0 z-50 bg-slate-50 dark:bg-slate-900 w-full h-16 border-b-0">
+<div class="flex items-center gap-8">
+<span class="text-lg font-black tracking-tighter text-blue-900 dark:text-blue-100 uppercase">Precision Conductor</span>
+<div class="hidden md:flex gap-6">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 font-sans text-sm tracking-tight py-5" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-tight hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors py-5 px-2" href="#">Analytics</a>
+<a class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-tight hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors py-5 px-2" href="#">Team</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Online</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="person_pin">person_pin</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-16 h-full flex flex-col z-40 bg-slate-100 dark:bg-slate-950 h-screen w-64 border-r-0">
+<div class="p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Agent Avatar" class="w-full h-full object-cover" data-alt="Portrait of a smiling professional agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhSLT_ZVMLB_IaKZrV7j43RybWp57D4HhND-SZ35fwzrkg0XHw_Q23ZILzTVxzGzaSWrWN28xBp2qxmZxY62H6nuX-qsPi9wCdA2B6imfFaPzNwOqcF_P1MVN_95nKA6F6kXu-LeJ44bIYp-U8uddrUgjIWMvAI5qyuLQT1HTbQoI7zHQIAPZAyuskCkmvPW4UFdFYWToi_KquuYDXoiT1aiEe900omo7-lVcd0SqWKk37E9h1cCIoF-UNwvhwK28enTZ9_9VHy5IC"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Agent 042</p>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Tier 2 Support</p>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<a class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200 border-l-4 border-blue-700 px-4 py-3 flex items-center gap-3 label-md uppercase font-bold tracking-widest text-[11px]" href="test2.html">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                    Active Call
+                </a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    WhatsApp Chat
+                </a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="index.html">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+                    Diary
+                </a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                    Knowledge Base
+                </a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</div>
+<div class="px-4 mt-6">
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all">
+                    New Interaction
+                </button>
+</div>
+<div class="mt-auto pb-20 border-t border-slate-200 dark:border-slate-800">
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Help
+                </a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white transition-all label-md uppercase font-bold tracking-widest text-[11px]" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col bg-surface">
+<!-- Top Header Bar (Asymmetric Stats) -->
+<div class="h-24 px-8 flex items-center justify-between border-b-0 bg-surface-container-low">
+<div class="flex items-baseline gap-4">
+<span class="text-4xl font-black tracking-tighter text-primary">04:12</span>
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500">Duration</span>
+</div>
+<div class="flex gap-12">
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Queue Status</p>
+<p class="text-lg font-bold text-on-surface">3 Pending</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Target CSAT</p>
+<p class="text-lg font-bold text-secondary">4.8 / 5.0</p>
+</div>
+</div>
+</div>
+<div class="flex-1 p-8 grid grid-cols-12 gap-8 overflow-y-auto pb-32">
+<!-- Left Column: Customer & History -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-8">
+<!-- Customer Profile Bento Card -->
+<section class="bg-surface-container-lowest p-8 rounded-xl ring-1 ring-outline-variant/15">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">Eleanor Vance</h1>
+<p class="text-slate-500 font-medium">Account #PC-99042-EV</p>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Premium Member</span>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Email</p>
+<p class="text-sm font-semibold truncate">e.vance@example.com</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Phone</p>
+<p class="text-sm font-semibold">+1 (555) 012-3456</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Location</p>
+<p class="text-sm font-semibold">Seattle, WA</p>
+</div>
+</div>
+</section>
+<!-- Interaction History -->
+<section class="bg-surface-container-lowest p-8 rounded-xl ring-1 ring-outline-variant/15 flex-1">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Recent Interaction History</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="chat">chat</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="font-bold text-sm">WhatsApp Support - Delivery Issue</p>
+<p class="text-[10px] text-slate-400">Oct 12, 14:30</p>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Client reported a delayed package for order #8812. Escalated to logistics.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="font-bold text-sm">Voice Call - Technical Inquiry</p>
+<p class="text-[10px] text-slate-400">Sep 28, 09:15</p>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Resolved login issues on the Precision Conductor portal. Password reset successfully.</p>
+</div>
+</div>
+<div class="flex gap-4 opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500" data-icon="mail">mail</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<p class="font-bold text-sm">Automated Email - Satisfaction Survey</p>
+<p class="text-[10px] text-slate-400">Sep 28, 10:00</p>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Rating: 5/5. Comments: "Very fast response, thank you."</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Notes & WhatsApp Meta -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-8">
+<!-- Notes Section -->
+<section class="bg-surface-container-highest p-8 rounded-xl flex flex-col h-full ring-1 ring-outline-variant/15">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-600">Active Call Notes</h2>
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="edit_note">edit_note</span>
+</div>
+<textarea class="flex-1 bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary/20 rounded-lg p-4 text-sm placeholder:italic" placeholder="Start typing interaction details here..."></textarea>
+<div class="mt-4 flex gap-2">
+<button class="bg-slate-200 text-on-surface py-2 px-4 rounded text-xs font-bold uppercase tracking-wider hover:bg-slate-300 transition-colors">Save Draft</button>
+<button class="bg-primary text-on-primary py-2 px-4 rounded text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-colors">Tag Case</button>
+</div>
+</section>
+<!-- WhatsApp Multichannel Context -->
+<section class="bg-surface-container-lowest/80 backdrop-blur-md p-6 rounded-xl ring-1 ring-outline-variant/15 border-l-4 border-secondary">
+<h2 class="text-xs font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
+                            Parallel Channel Context
+                        </h2>
+<div class="space-y-4">
+<div class="bg-secondary-container/30 p-3 rounded-lg rounded-tl-none">
+<p class="text-[10px] font-bold text-on-secondary-container mb-1">Customer (WhatsApp)</p>
+<p class="text-xs">I'm also seeing a 404 error on the checkout page. Can you check my session?</p>
+</div>
+<div class="bg-surface-container-high p-3 rounded-lg rounded-tr-none ml-6">
+<p class="text-[10px] font-bold text-slate-600 mb-1">System Bot</p>
+<p class="text-xs italic">Connecting you to an agent...</p>
+</div>
+</div>
+<button class="w-full mt-4 text-[10px] font-bold text-secondary uppercase tracking-widest py-2 border border-secondary/20 rounded-lg hover:bg-secondary/5 transition-colors">Jump to WhatsApp</button>
+</section>
+</div>
+</div>
+<!-- Prominent Activities Area (Call Controls) -->
+<footer class="fixed bottom-0 left-64 right-0 h-28 bg-surface-container-lowest flex items-center justify-between px-12 z-50 border-t-0 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex gap-4">
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Chat</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-primary" data-icon="mic_off">mic_off</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Mute</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<div class="w-12 h-12 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-600 group-hover:text-tertiary" data-icon="pause">pause</span>
+</div>
+<span class="text-[10px] font-bold uppercase text-slate-500">Hold</span>
+</button>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-3 bg-primary-container text-on-primary-container px-6 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="forward">forward</span>
+                        Transfer Call
+                    </button>
+<button class="flex items-center gap-3 bg-error text-on-error px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-lg shadow-error/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="call_end">call_end</span>
+                        Hang Up
+                    </button>
+</div>
+<div class="flex gap-6 items-center">
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase text-slate-400">Recording</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<p class="text-xs font-bold">On Air</p>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
