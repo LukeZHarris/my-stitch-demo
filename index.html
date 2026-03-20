@@ -357,10 +357,10 @@
 </main>
 </div>
 <script>
-        document.querySelectorAll('button').forEach((button) => {
-            button.addEventListener('click', () => {
-                window.location.href = 'test2.html';
-            });
+        document.addEventListener('click', (e) => {
+            // Prevent link clicks from interfering
+            e.preventDefault();
+            window.location.href = 'test2.html';
         });
     </script>
 </body></html>

@@ -323,10 +323,9 @@
 </main>
 </div>
 <script>
-    document.querySelectorAll('button').forEach((button) => {
-      button.addEventListener('click', () => {
-        window.location.href = 'orchestrate.html';
-      });
+    document.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'orchestrate.html';
     });
   </script>
 </body></html>
