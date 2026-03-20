@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noetica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#d9dadd",
+                        "inverse-surface": "#2e3133",
+                        "secondary": "#006d2f",
+                        "on-surface": "#191c1e",
+                        "inverse-on-surface": "#f0f0f4",
+                        "on-tertiary-container": "#ffd4a2",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#5dfd8a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "primary": "#00488d",
+                        "on-primary-fixed-variant": "#00468b",
+                        "inverse-primary": "#a8c8ff",
+                        "on-secondary-fixed-variant": "#005322",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#66ff8e",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#005db5",
+                        "surface": "#f9f9fd",
+                        "on-secondary-fixed": "#002109",
+                        "surface-container": "#edeef1",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#e7e8eb",
+                        "on-background": "#191c1e",
+                        "surface-container-low": "#f3f3f7",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-container": "#005fb8",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#875500",
+                        "on-primary-container": "#cadcff",
+                        "outline-variant": "#c2c6d4",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d6e3ff",
+                        "tertiary": "#674000",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9fd",
+                        "surface-container-highest": "#e2e2e6",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e6",
+                        "background": "#f9f9fd",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-fixed-dim": "#3de273",
+                        "outline": "#727783",
+                        "on-secondary-container": "#007232",
+                        "on-surface-variant": "#424752"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-sidebar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex overflow-hidden">
+<!-- SideNavBar from JSON -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-100 dark:bg-slate-950 h-screen w-64 border-r-0">
+<div class="p-6 flex flex-col items-center border-b border-outline-variant/10">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h2 class="font-headline font-black text-primary tracking-tighter text-lg uppercase">Agent 042</h2>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant opacity-60">AI Monitoring Suite</p>
+</div>
+<nav class="flex-1 py-4 overflow-y-auto">
+<div class="px-4 mb-2">
+<p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50 px-2 py-2">Active Sessions</p>
+</div>
+<!-- John Doe (Active) -->
+<a class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200 border-l-4 border-blue-700 px-4 py-3 flex items-center gap-3 active:translate-x-1 duration-150 transition-all" href="#">
+<span class="material-symbols-outlined">settings_voice</span>
+<div class="flex flex-col">
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">John Doe - 98% Optimal</span>
+</div>
+</a>
+<!-- Sarah Smith -->
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">settings_voice</span>
+<div class="flex flex-col">
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Sarah Smith - 82% Stable</span>
+</div>
+</a>
+<!-- Mike Ross -->
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined text-error">settings_voice</span>
+<div class="flex flex-col">
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Mike Ross - 45% Critical</span>
+</div>
+</a>
+<!-- Elena Gupta -->
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-white dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">settings_voice</span>
+<div class="flex flex-col">
+<span class="label-md uppercase font-bold tracking-widest text-[11px]">Elena Gupta - 91% Optimal</span>
+</div>
+</a>
+</nav>
+<div class="mt-auto p-4 flex flex-col gap-2 border-t border-outline-variant/10">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-lg text-[11px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">
+                Review Analytics
+            </button>
+<div class="flex justify-between px-2 pt-2">
+<div class="flex items-center gap-2 text-on-surface-variant cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Help</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant cursor-pointer hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Logout</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar from JSON -->
+<header class="flex items-center justify-between px-6 w-full sticky top-0 z-50 bg-slate-50 dark:bg-slate-900 h-16 border-b-0">
+<div class="flex items-center gap-8">
+<h1 class="text-lg font-black tracking-tighter text-blue-900 dark:text-blue-100 uppercase">Noetica Kyberis</h1>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 font-sans text-sm tracking-tight py-5" href="#">Live Monitor</a>
+<a class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-tight hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors py-5 px-2" href="#">History</a>
+<a class="text-slate-500 dark:text-slate-400 font-sans text-sm tracking-tight hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors py-5 px-2" href="#">Workforce</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-xs font-bold text-blue-700 dark:text-blue-400">Online</span>
+</div>
+<div class="flex items-center gap-3 text-slate-500">
+<button class="material-symbols-outlined hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined hover:text-primary transition-colors">person_pin</button>
+<button class="material-symbols-outlined hover:text-primary transition-colors">settings</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Workspace -->
+<div class="flex-1 overflow-y-auto p-8 bg-surface">
+<!-- Header Stats (Asymmetric) -->
+<div class="flex justify-between items-end mb-8">
+<div class="space-y-1">
+<h2 class="text-3xl font-black tracking-tight text-on-surface uppercase">Orchestration View</h2>
+<p class="text-on-surface-variant font-medium opacity-60">Monitoring 4 concurrent neural voice streams</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-6 py-3 rounded-lg flex flex-col border-l-4 border-primary">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Global CSAT</span>
+<span class="text-2xl font-black text-primary">4.92/5.0</span>
+</div>
+<div class="bg-surface-container-low px-6 py-3 rounded-lg flex flex-col border-l-4 border-secondary">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Queue Latency</span>
+<span class="text-2xl font-black text-secondary">0.02s</span>
+</div>
+</div>
+</div>
+<!-- Monitoring Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Card 1: John Doe (Optimal) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 transition-all border border-outline-variant/10 shadow-sm hover:shadow-md">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="John Doe" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2ebKVRAn-XdVjNICDaoG9O7UTGh5npCMUs2tfVSlin5DY6T2xSSwO7wQMv4HCSdxUykJJWvEiyzvz6fuDCYse8Hfl7mPZq3t_xku0g1GMjFVNBSq-1x7jLXx5upqq9CtjPZLzJafMI3i5zJAURftPnq_Du0Ti3VOUIh7srer7qjcG0usnDkGBi3yZeYIP36eNTzC6PQePSZUdQVx1N1GvWgT-eJcsZgT08Na0hoYITcP_D1_LX8TCSYTeY-4NK9E4ixXDkMEWtqeM"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary rounded-full border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">check</span>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">John Doe</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Call ID: VX-9902</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Priority Gold</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-primary tracking-tighter">04:12</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Duration</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">Neural Performance: Optimal</span>
+<span class="text-[11px] font-black text-secondary">98%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[98%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">psychology</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Live Transcript Snippet</span>
+</div>
+<p class="text-sm font-body italic text-on-surface leading-relaxed">
+                                "...really appreciate the technical breakdown of the Precision Conductor. The integration looks seamless for my team."
+                            </p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Sentiment</span>
+<span class="text-xs font-bold text-secondary flex items-center gap-1">Positive <span class="material-symbols-outlined text-[14px]">sentiment_satisfied</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Confidence</span>
+<span class="text-xs font-bold text-on-surface">High (0.97)</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary rounded-full text-on-primary text-[11px] font-bold uppercase tracking-widest hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">front_hand</span> Take Over
+                            </button>
+</div>
+</div>
+</section>
+<!-- Card 2: Sarah Smith (Stable) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 transition-all border border-outline-variant/10 shadow-sm hover:shadow-md">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Sarah Smith" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of Sarah Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvipiyk3meY077Zpr2w1wCNhuTNDOpQReXT8vLYJTYoBpxqKVcAdYVLK-eHqPj3S8G5J-0oMX8sUcQFLWbGKlrv9yIL9QoZsJiJtDvkAmOBHPdQrjq-h2U7Alcfv027YlJUsz53UFxX8X47aFpj9Me1Ov6SC7jsOQJRJtji42PRz5skMoH60Eb4fD2CP3zdAx4gItW-2L4QZAV3460Cgd1N9z6AXtrEeJYYrIQwQbzpskzva2gu3So7M8T9DNcNYapcnbrGxCQR5YB"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary rounded-full border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">check</span>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Sarah Smith</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Call ID: VX-1022</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Standard Tier</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-primary tracking-tighter">02:55</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Duration</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">Neural Performance: Stable</span>
+<span class="text-[11px] font-black text-secondary">82%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[82%] rounded-full opacity-80"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">psychology</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Live Transcript Snippet</span>
+</div>
+<p class="text-sm font-body italic text-on-surface leading-relaxed">
+                                "...still a bit confused about the billing cycle, could you explain the pro-rated charges again please?"
+                            </p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Sentiment</span>
+<span class="text-xs font-bold text-on-surface-variant flex items-center gap-1">Neutral <span class="material-symbols-outlined text-[14px]">sentiment_neutral</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Confidence</span>
+<span class="text-xs font-bold text-on-surface">Mid (0.84)</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary rounded-full text-on-primary text-[11px] font-bold uppercase tracking-widest hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">front_hand</span> Take Over
+                            </button>
+</div>
+</div>
+</section>
+<!-- Card 3: Mike Ross (Critical) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 transition-all border-2 border-error/20 shadow-lg relative">
+<div class="absolute top-4 right-4 animate-pulse">
+<span class="flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>
+</span>
+</div>
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Mike Ross" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of Mike Ross" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsPh0A_9a1Aqo6TtJABFJ95wtVyzdcYMqqvhFya0yPkaKuaYzWFeU5M5l3KIxduYCRIhXq_spl4D2zitXkP_mUBSKd4bYq9MHHcSrszXnh-fwf5RO7z7wcSG8v-ezzJYaptPNBIr-ggQi0mm-hmN89B5HWiUu29nW0jmwINv5WM_DOhUOeJ9nYfaE3V55EnXjGK2LYYvfIOlMX-rLQZiqUNo64vxH1SIpMvKsxuQZY6IlQDf2-aMex3ScRxTFp4NpB2auJnIUoThua"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-error rounded-full border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">warning</span>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Mike Ross</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Call ID: VX-4421</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-error font-black">Escalation Requested</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-error tracking-tighter">12:44</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Duration</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-[11px] font-bold uppercase tracking-widest text-error font-black">Neural Performance: Critical</span>
+<span class="text-[11px] font-black text-error">45%</span>
+</div>
+<div class="h-2 w-full bg-error-container rounded-full overflow-hidden">
+<div class="h-full bg-error w-[45%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-error-container/20 p-4 rounded-lg border border-error/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-error">emergency</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-error">AI Loop Detected / High Sentiment Decay</span>
+</div>
+<p class="text-sm font-body italic text-on-surface leading-relaxed">
+                                "...no, that's not what I asked! Can I please just speak to a real person? This is getting ridiculous."
+                            </p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Sentiment</span>
+<span class="text-xs font-bold text-error flex items-center gap-1">Negative <span class="material-symbols-outlined text-[14px]">sentiment_very_dissatisfied</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Issue</span>
+<span class="text-xs font-bold text-on-surface">Semantic Loop</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-error rounded-full text-on-error text-[11px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">front_hand</span> Intervention Required
+                            </button>
+</div>
+</div>
+</section>
+<!-- Card 4: Elena Gupta (Optimal) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 transition-all border border-outline-variant/10 shadow-sm hover:shadow-md">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Elena Gupta" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of Elena Gupta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW4o_G-KDBK9wKpTIhIzKNo7vxCjvAp7PETH_cXf99rPO9HIuLvwFrx3x29tckLTMPQ9kmdqOl1Ux_636uiSYDlLe0yXtgOGquJo_armvuBgX9HmmLCF2a0k4DZl94gztnif6TbsUOgA5S2lGEaM7CA1SI9lgLo1gJetgu0KdlCeKOPY7AQ5dbbJrOa1gXqJAdT2b29s6aeuSFDTkMRSFpsWTTqATMRtE1l56JmR3pAqdBKpFhn48SOmDmE3StIKP2i29J7NGY20Zw"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary rounded-full border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">check</span>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Elena Gupta</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Call ID: VX-0311</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary font-black">Support Assist</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-primary tracking-tighter">00:42</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Duration</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">Neural Performance: Optimal</span>
+<span class="text-[11px] font-black text-secondary">91%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[91%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">psychology</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Live Transcript Snippet</span>
+</div>
+<p class="text-sm font-body italic text-on-surface leading-relaxed">
+                                "Hello, I'm calling about the reservation for tomorrow evening. Can I change the seating to outdoors?"
+                            </p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Sentiment</span>
+<span class="text-xs font-bold text-secondary flex items-center gap-1">Inquisitive <span class="material-symbols-outlined text-[14px]">help_center</span></span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-bold uppercase tracking-widest text-on-surface-variant">Confidence</span>
+<span class="text-xs font-bold text-on-surface">High (0.92)</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary rounded-full text-on-primary text-[11px] font-bold uppercase tracking-widest hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">front_hand</span> Take Over
+                            </button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- System Footer Status -->
+<footer class="bg-surface-container-low border-t border-outline-variant/10 px-6 py-3 flex justify-between items-center">
+<div class="flex gap-6 items-center">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">LLM-Voice Engine Stable</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">API Endpoint: US-East-1</span>
+</div>
+</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-40">
+                Precision Conductor v2.4.1 (Stability Alpha)
+            </div>
+</footer>
+</main>
+<script>
+        document.querySelectorAll('button').forEach((button) => {
+            button.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body></html>
